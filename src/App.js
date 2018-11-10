@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import * as BooksAPI from './BooksAPI'
+import { Route } from 'react-router-dom';
 import './App.css';
+import Main from './components/pages/Main'
+import Search from './components/pages/Search'
 
 class App extends Component {
+  state = {
+    books: []
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Route exact path="/" component={Main}/>
+        <Route exact path="/search" component={Search}/>
       </div>
     );
   }
