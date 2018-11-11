@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import * as BooksAPI from './BooksAPI'
-import Book from '../Book'
+import Shelf from '../Shelf'
 
 
 class Main extends Component {
@@ -10,7 +10,7 @@ class Main extends Component {
           <div className="list-books-title">
             <h1>MyReads</h1>
           </div>
-          <Book/>
+          <Shelf/>
       </div>
     )
   }
