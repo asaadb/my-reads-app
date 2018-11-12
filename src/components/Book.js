@@ -2,9 +2,10 @@
 import React, { Component } from "react";
 
 class Book extends Component {
+
   render() {
-    const {book} = this.props;
-    //console.log(book);
+    const book = this.props.book;
+    console.log('book props',this.props);
     return (
       <div className="book">
         <div className="book-top">
@@ -17,7 +18,7 @@ class Book extends Component {
             }}
           />
           <div className="book-shelf-changer">
-            <select>
+            <select onChange={(event) => this.props.updateBook(book, event.target.value)}>
               <option value="move" disabled>
                 Move to...
               </option>

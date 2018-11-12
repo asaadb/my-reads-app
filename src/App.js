@@ -16,16 +16,32 @@ class App extends Component {
       //console.log(books);
       this.setState({ books });
     });
-
+  }
+  //update shelf of the book
+  changeBookShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => {console.log('books are updated')});
+    const newBookState = this.state.books.map(item => {
+      // console.log('book id', book.id)
+      // console.log('item id', item.id)
+      if(item.id === book.id) {
+        // console.log('this is the match', item)
+        item.shelf = shelf;
+      }
+      return item
+    })
+    this.setState({
+      books: newBookState
+    })
+    console.log('this is the new list', newBookState)
   }
   render() {
-    console.log(this.state);
+
     return (
       <div className="App">
         <Route
           exact
           path="/"
-          render={() => <Main books={this.state.books} />}
+          render={() => <Main books={this.state.books} onChangeShelf={this.changeBookShelf} />}
         />
         <Route
           exact

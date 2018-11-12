@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Book from "./Book";
 
 class Shelf extends Component {
+
   render() {
-    const { books } = this.props;
-    console.log(books);
+    const books = this.props.books;
+      console.log('books in the shelf',books);
     return (
       <div>
         <div className="bookshelf">
@@ -15,7 +16,7 @@ class Shelf extends Component {
                 book.shelf === 'currentlyReading'
               )).map(currBook => (
                 <li key={currBook.id}>
-                <Book book={currBook} />
+                <Book book={currBook} updateBook={this.props.updateBookShelf}/>
                 </li>
               ))}
             </ol>
@@ -29,7 +30,7 @@ class Shelf extends Component {
               book.shelf === 'wantToRead'
             )).map(currBook => (
               <li key={currBook.id}>
-              <Book book={currBook} />
+              <Book book={currBook} updateBook={this.props.updateBookShelf} />
               </li>
             ))}
             </ol>
@@ -43,7 +44,7 @@ class Shelf extends Component {
               book.shelf === 'read'
             )).map(currBook => (
               <li key={currBook.id}>
-              <Book book={currBook} />
+              <Book book={currBook} updateBook={this.props.updateBookShelf}/>
               </li>
             ))}
             </ol>
