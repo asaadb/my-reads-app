@@ -10,12 +10,13 @@ class App extends Component {
   state = {
     books: []
   };
-  //get all the books from the books API
+  //get all the books on the shelfs from the books API
   componentDidMount() {
     BooksAPI.getAll().then(books => {
       //console.log(books);
       this.setState({ books });
     });
+
   }
   render() {
     console.log(this.state);
