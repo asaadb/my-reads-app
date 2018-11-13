@@ -5,7 +5,7 @@ class Book extends Component {
 
   render() {
     const book = this.props.book;
-    console.log('book props',this.props);
+    console.log('book props',this.props.book);
     return (
       <div className="book">
         <div className="book-top">
