@@ -36,8 +36,14 @@ class Search extends Component {
     // console.log('books from search', this.props);
     //const query = this.state.query;
     const searchResults = this.state.bookResults;
-
-    let showingBooks = searchResults;
+    //loop over the books from the search results to check if they have a shelf peoperty,
+    //if they do not belong in a shelf, set their shelf prop to 'none'
+    let showingBooks = searchResults.map(book =>{
+      if(!book.shelf) {
+        book.shelf ='none';
+      }
+      return book;
+    });
 
     //sort books alphabetically
     showingBooks.sort(sortBy("title"));
@@ -59,7 +65,7 @@ class Search extends Component {
           <ol className="books-grid">
             {showingBooks.map(book => (
               <li key={book.id}>
-                <Book book={book} updateBook={this.props.onChangeShelf} />
+                <Book book={book} updateBook={this.props.onChangeShelf} currentShelf={book.shelf}/>
               </li>
             ))}
           </ol>

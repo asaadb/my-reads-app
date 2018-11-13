@@ -16,7 +16,7 @@ class Shelf extends Component {
                 book.shelf === 'currentlyReading'
               )).map(currBook => (
                 <li key={currBook.id}>
-                <Book book={currBook} updateBook={this.props.updateBookShelf}/>
+                <Book book={currBook} updateBook={this.props.updateBookShelf} currentShelf={currBook.shelf}/>
                 </li>
               ))}
             </ol>
@@ -30,7 +30,7 @@ class Shelf extends Component {
               book.shelf === 'wantToRead'
             )).map(currBook => (
               <li key={currBook.id}>
-              <Book book={currBook} updateBook={this.props.updateBookShelf} />
+              <Book book={currBook} updateBook={this.props.updateBookShelf} currentShelf={currBook.shelf} />
               </li>
             ))}
             </ol>
@@ -44,7 +44,7 @@ class Shelf extends Component {
               book.shelf === 'read'
             )).map(currBook => (
               <li key={currBook.id}>
-              <Book book={currBook} updateBook={this.props.updateBookShelf}/>
+              <Book book={currBook} updateBook={this.props.updateBookShelf} currentShelf={currBook.shelf}/>
               </li>
             ))}
             </ol>
