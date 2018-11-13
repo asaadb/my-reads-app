@@ -34,17 +34,11 @@ class Search extends Component {
   render() {
     //const { books } = this.props;
     // console.log('books from search', this.props);
-    const query = this.state.query;
+    //const query = this.state.query;
     const searchResults = this.state.bookResults;
 
-    let showingBooks = [];
-    //create a RegExp and use the escapeRegExp to escape any RegExp charactor in the query
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), "i");
-      showingBooks = searchResults.filter(
-        book => (match.test(book.title) || match.test(book.authors[0]))
-      );
-    }
+    let showingBooks = searchResults;
+
     //sort books alphabetically
     showingBooks.sort(sortBy("title"));
     return (
