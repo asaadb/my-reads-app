@@ -14,7 +14,7 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #4ABCAC;
   text-align: center;
 }
 .list-books-title h1 {
@@ -55,7 +55,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #4ABCAC;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -149,12 +149,17 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #FC4A1A;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
+  transition: ease-in-out 0.3s;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.book-shelf-changer:hover {
+  background-color: #F7B733;
+  transition: ease-in-out 0.3s;
 }
 .book-shelf-changer select {
   width: 100%;
