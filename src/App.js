@@ -9,21 +9,22 @@ class App extends Component {
   state = {
     books: []
   };
-  //get all the books on the shelfs from the books API
+  /* Get all the books on the shelfs from the books API */
   componentDidMount() {
     BooksAPI.getAll().then(books => {
-      //console.log(books);
       this.setState({ books });
     });
   }
-  //update shelf of the book
+  /* changeBookShelf method takes two parameters: the book to be updated and the shelf
+   * then updates the book's in the backend and locally
+   */
   changeBookShelf = (book, shelf) => {
     let newBookState;
-    //update the books in the API
+    /* Update the books in the API */
     BooksAPI.update(book, shelf).then(() => {
       console.log("books are updated");
     });
-    //check if the book already exists in the list of books, if not, add it
+    /* Check if the book already exists in the list of books, if not, add it */
     if (this.state.books.filter(e => e.id === book.id).length === 0) {
       newBookState = this.state.books.push(book);
     }
@@ -33,11 +34,10 @@ class App extends Component {
       }
       return item;
     });
-    //set the book state to the new books
+    /* set the book state to the new books */
     this.setState({
       books: newBookState
     });
-    console.log("this is the new list", newBookState);
   };
   render() {
     return (
