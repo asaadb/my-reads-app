@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 html, body, .root {
   height: 100%;
 }
 body {
   line-height: 1.5;
+  font-family: 'Lato', sans-serif;
 }
 body, .app {
   background: white;
