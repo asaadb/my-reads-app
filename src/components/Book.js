@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
 class Book extends Component {
+<<<<<<< HEAD
   /*
    * Here we render the books. The book is passed in the props
+=======
+  /* Here we render the books. The book is passed in the props
+>>>>>>> 7aece674f1bfb34aa7c871d1c7a0385c6a42a63b
    * as well as the update function and the book shelf.
    * Also, we handle books with no authors or imageLinks props
    */
