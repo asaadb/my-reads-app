@@ -15,12 +15,9 @@ class App extends Component {
       this.setState({ books });
     });
   }
-<<<<<<< HEAD
+
   /*
    * ChangeBookShelf method takes two parameters: the book to be updated and the shelf
-=======
-  /* changeBookShelf method takes two parameters: the book to be updated and the shelf
->>>>>>> 7aece674f1bfb34aa7c871d1c7a0385c6a42a63b
    * then updates the book's in the backend and locally
    */
   changeBookShelf = (book, shelf) => {
@@ -39,11 +36,7 @@ class App extends Component {
       }
       return item;
     });
-<<<<<<< HEAD
     /* Set the book state to the new books */
-=======
-    /* set the book state to the new books */
->>>>>>> 7aece674f1bfb34aa7c871d1c7a0385c6a42a63b
     this.setState({
       books: newBookState
     });
