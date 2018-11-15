@@ -38,16 +38,22 @@ class Search extends Component {
 
   render() {
     const searchResults = this.state.bookResults;
+    const shelfBooks = this.props.books;
     /*
      * Map over the search result and check if  a book is alreadly added
-     * to one of the shelfs. if not, give it a property pf shelf with a value
+     * to one of the shelfs. if not, give it a property of shelf with a value
      * of none
      */
-    let showingBooks = searchResults.map(book => {
-      if (!book.shelf) {
-        book.shelf = "none";
+    let showingBooks = searchResults.map(searchBook => {
+      shelfBooks.forEach(shelfBook => {
+        if (searchBook.id === shelfBook.id) {
+          searchBook.shelf = shelfBook.shelf;
+        }
+      });
+      if (!searchBook.shelf) {
+        searchBook.shelf = "none";
       }
-      return book;
+      return searchBook;
     });
     /* sort books alphabetically */
     showingBooks.sort(sortBy("title"));
@@ -67,7 +73,7 @@ class Search extends Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-          {/*
+            {/*
         Mapping over the books in the showingBooks array and passing each book
         to the Book component
         */}
