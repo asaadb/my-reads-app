@@ -41,9 +41,10 @@ class Search extends Component {
     const shelfBooks = this.props.books;
     /*
      * Map over the search result and check if  a book is alreadly added
-     * to one of the shelfs. if not, give it a property of shelf with a value
+     * to one of the shelves. if not, give it a property of shelf with a value
      * of none
      */
+     console.log(searchResults);
     let showingBooks = searchResults.map(searchBook => {
       shelfBooks.forEach(shelfBook => {
         if (searchBook.id === shelfBook.id) {

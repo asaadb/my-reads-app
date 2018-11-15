@@ -3,7 +3,7 @@ import Book from "./Book";
 
 class Shelf extends Component {
   /*
-   * Here, we are rendering the shelfs. We are filtering the books
+   * Here, we are rendering the shelves. We are filtering the books
    * and render them based of their shelf prop. We pass the book to
    * the Book component along with its shelf prop and the updateBook
    * function

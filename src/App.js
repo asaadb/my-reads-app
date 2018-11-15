@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     books: []
   };
-  /* Get all the books on the shelfs from the books API */
+  /* Get all the books on the shelvs from the books API */
   componentDidMount() {
     BooksAPI.getAll().then(books => {
       this.setState({ books });
