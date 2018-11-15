@@ -2,6 +2,8 @@
 
  This project was created as part of Udacity Front-End Nanodegree. This is a personal bookshelf manager App built with React that allows the user to keep track of books sorted into three shelves: "currently reading", "want to read", and "read". The user can transfer books between shelves, remove books, and add books by searching via the backend BookAPI provided by Udacity.
 
+ ![Screenshot](./src/images/snippet.PNG "Screenshot")
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
